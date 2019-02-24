@@ -1,5 +1,5 @@
 # **目录**
-## 1.[Two Sum](https://leetcode.com/problems/two-sum/)
+## 1. [Two Sum](https://leetcode.com/problems/two-sum/)
 ## 15. [3Sum](https://leetcode.com/problems/3sum/)
 ## 20. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 ## 24. [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
