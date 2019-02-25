@@ -1,4 +1,4 @@
-// ¿ìÂıÖ¸Õë
+// å¿«æ…¢æŒ‡é’ˆ
 public class Solution {
     public boolean hasCycle(ListNode head) {
         ListNode fast = head;

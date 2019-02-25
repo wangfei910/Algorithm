@@ -5,14 +5,14 @@ class Solution {
             return res;
         HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
         for(int i=0;i<nums.length;i++)
-        {                      
-            if(map.containsKey(target-nums[i]))    //ÅÐ¶ÏmapÖÐÊÇ·ñ°üº¬Ïà¼õÖ®ºóµÄÊý
+        {
+            if(map.containsKey(target-nums[i]))    //åˆ¤æ–­mapä¸­æ˜¯å¦åŒ…å«ç›¸å‡ä¹‹åŽçš„æ•°
             {
                 res[0]=map.get(target-nums[i]);
                 res[1]=i;
                 return res;
             }
-            map.put(nums[i],i); 
+            map.put(nums[i],i);
         }
         return res;
     }
