@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.T236;
 
-import Algorithm.LeetCode.common.TreeNode;
+import Algorithm.common.TreeNode;
 
 /**
  * 二叉树的最低公共祖先

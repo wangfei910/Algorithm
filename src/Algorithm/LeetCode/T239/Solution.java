@@ -37,8 +37,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
         int k = 3;
         System.out.print(Arrays.toString(maxSlidingWindow(nums, k)));
+        long end = System.currentTimeMillis();
+        System.out.println("运行时间：" + (end - start) + "ms");
     }
 }

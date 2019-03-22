@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.T235;
 
-import Algorithm.LeetCode.common.TreeNode;
+import Algorithm.common.TreeNode;
 
 /**
  * 二叉搜索树的最低公共祖先

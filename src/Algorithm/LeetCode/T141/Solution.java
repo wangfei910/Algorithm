@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.T141;
 
-import Algorithm.LeetCode.common.ListNode;
+import Algorithm.common.ListNode;
 
 /**
  * 判断链表是否有环

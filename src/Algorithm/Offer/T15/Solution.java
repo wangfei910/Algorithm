@@ -1,12 +1,10 @@
-package Algorithm.LeetCode.T206;
+package Algorithm.Offer.T15;
 
 import Algorithm.common.ListNode;
 import Algorithm.common.ListNodeUtil;
 
-import java.util.ArrayList;
-
 /**
- * 反转单链表
+ * 反转链表
  *
  * @author wangfei
  */
@@ -20,16 +18,16 @@ public class Solution {
      * @param head
      * @return
      */
-    public static ListNode reverseList(ListNode head) {
+    public static ListNode ReverseList(ListNode head) {
         ListNode cur = head;
-        ListNode reverseHead = null;
-        while (cur != null) {
+        ListNode resHead = null;
+        while (cur != null && cur.next != null) {
             ListNode Next = cur.next;
-            cur.next = reverseHead;
-            reverseHead = cur;
+            cur.next = resHead;
+            resHead = cur;
             cur = Next;
         }
-        return reverseHead;
+        return resHead;
     }
 
     /**
@@ -38,23 +36,28 @@ public class Solution {
      * @param head
      * @return
      */
-    public static ListNode reverseList2(ListNode head) {
+    public static ListNode ReverseList2(ListNode head) {
         if (head == null || head.next == null)
             return head;
-        ListNode second = head.next;
-        ListNode reverseHead = reverseList2(second);
-        second.next = head;
+        ListNode Next = head.next;
+        ListNode resHead = ReverseList2(Next);
+        Next.next = head;
         head.next = null;
-        return reverseHead;
+        return resHead;
     }
 
+    /**
+     * 主函数
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         long start = System.nanoTime();
         ListNodeUtil listNodeUtil = new ListNodeUtil();
         int[] arr = {1, 2, 3, 4, 5};
         listNodeUtil.showListNode(listNodeUtil.buildListNode(arr));
-        listNodeUtil.showListNode(reverseList2(listNodeUtil.buildListNode(arr)));
+        listNodeUtil.showListNode(ReverseList2(listNodeUtil.buildListNode(arr)));
         long end = System.nanoTime();
-        System.out.println("运行时间：" + (end - start) +"ns");
+        System.out.println("运行时间：" + (end - start) + "ns");
     }
 }

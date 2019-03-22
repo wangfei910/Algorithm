@@ -1,7 +1,7 @@
 package Algorithm.LeetCode.T24;
 
-import Algorithm.LeetCode.common.ListNode;
-import Algorithm.LeetCode.common.ListNodeUtil;
+import Algorithm.common.ListNode;
+import Algorithm.common.ListNodeUtil;
 
 /**
  * 交换链表相邻两个元素

@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.T98;
 
-import Algorithm.LeetCode.common.TreeNode;
+import Algorithm.common.TreeNode;
 
 /**
  * 验证二叉搜索树

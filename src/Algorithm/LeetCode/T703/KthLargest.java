@@ -39,8 +39,11 @@ public class KthLargest {
     }
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         int k = 3;
         int[] nums = {4, 5, 8, 2};
         System.out.print(new KthLargest(k, nums));
+        long end = System.currentTimeMillis();
+        System.out.println("运行时间：" + (end - start) + "ms");
     }
 }

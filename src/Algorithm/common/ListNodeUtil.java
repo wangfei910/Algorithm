@@ -1,7 +1,7 @@
-package Algorithm.LeetCode.common;
+package Algorithm.common;
 
 /**
- * ListNode工具类，实现创建链表和删除链表
+ * ListNode工具类，实现创建链表和显示链表
  *
  * @author wangfei
  */
@@ -29,11 +29,12 @@ public class ListNodeUtil {
      *
      * @param head
      */
-    public static void showListNode(ListNode head) {
+    public static ListNode showListNode(ListNode head) {
         while (head != null) {
             System.out.print(head.val + "->");
             head = head.next;
         }
         System.out.println("NULL");
+        return head;
     }
 }

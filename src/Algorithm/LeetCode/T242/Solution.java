@@ -33,9 +33,12 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         String s = "anagram";
         String t = "nagaram";
         System.out.print(isAnagram(s, t));
+        long end = System.currentTimeMillis();
+        System.out.println("运行时间：" + (end - start) + "ms");
     }
 
 }

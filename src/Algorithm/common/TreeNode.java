@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.common;
+package Algorithm.common;
 
 public class TreeNode {
     public int val;

@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.common;
+package Algorithm.common;
 
 public class ListNode {
     public int val;

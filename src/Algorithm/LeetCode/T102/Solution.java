@@ -1,38 +1,46 @@
 package Algorithm.LeetCode.T102;
 
-import Algorithm.LeetCode.common.TreeNode;
+import Algorithm.common.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * 按层遍历二叉树
  *
- * @author
+ * @author wangfei
  */
 public class Solution {
-    public ArrayList<Integer> levelOrder(TreeNode root) {
-        ArrayList<Integer> resList = new ArrayList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
-        if (root == null)
-            return resList;
-        else {
-            queue.offer(root);
-            while (!queue.isEmpty()) {
-                TreeNode tempNode = queue.remove();
-                resList.add(tempNode.val);
-                if (tempNode.left != null)
-                    queue.offer(tempNode.left);
-                if (tempNode.right != null)
-                    queue.offer(tempNode.right);
-            }
-            return resList;
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return result;
         }
+        Deque<TreeNode> que = new LinkedList<TreeNode>();
+        helper(result, 0, que, root);
+        return result;
+    }
+
+    private void helper(List<List<Integer>> result, int index, Deque<TreeNode> que, TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        List<Integer> level;
+        if (result.size() == index) {
+            level = new ArrayList<>();
+            result.add(level);
+        } else {
+            level = result.get(index);
+        }
+        level.add(root.val);
+        helper(result, index + 1, que, root.left);
+        helper(result, index + 1, que, root.right);
     }
 
     //TODO
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
 
+        long end = System.currentTimeMillis();
+        System.out.println("运行时间：" + (end - start) + "ms");
     }
 }
