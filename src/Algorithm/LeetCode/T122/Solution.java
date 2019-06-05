@@ -1,6 +1,13 @@
 package Algorithm.LeetCode.T122;
 
+/**
+ * 股票买卖的最佳时机（买卖无数次）
+ *
+ * @author: wangfei
+ * @date: 2019/4/21 10:34
+ */
 public class Solution {
+
     /**
      * 只要第二天的股价比当天的高，那就在当天买进，第二天卖出，这样利润最大
      *

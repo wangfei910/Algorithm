@@ -1,5 +1,7 @@
 package Algorithm.LeetCode.T242;
 
+import java.util.HashMap;
+
 /**
  * 有效的回文构词法
  *
@@ -18,7 +20,7 @@ public class Solution {
      * @return
      */
     public static boolean isAnagram(String s, String t) {
-        if (s == null || t == null || (s.length() != t.length()))
+        if (s == null || s.length() == 0 || t == null || t.length() == 0 || s.length() != t.length())
             return false;
         int[] arr = new int[26];
         for (int i = 0; i < s.length(); i++) {
@@ -32,11 +34,40 @@ public class Solution {
         return true;
     }
 
+    /**
+     * 时间复杂度：O(nlogn)
+     * @param s
+     * @param t
+     * @return
+     */
+    public static boolean isAnagram2(String s, String t) {
+        if (s == null || t == null || s.length() != t.length())
+            return false;
+        HashMap<Character, Integer> count = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (count.containsKey(s.charAt(i))) {
+                count.put(s.charAt(i), count.get(s.charAt(i)) + 1);
+            } else {
+                count.put(s.charAt(i), 1);
+            }
+        }
+        for (int i = 0; i < t.length(); i++) {
+            if (count.containsKey(t.charAt(i)) && count.get(t.charAt(i)) > 0) {
+                count.put(t.charAt(i), count.get(t.charAt(i)) - 1);
+            }
+        }
+        for (int i : count.values()) {
+            if (i != 0)
+                return false;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         String s = "anagram";
         String t = "nagaram";
-        System.out.print(isAnagram(s, t));
+        System.out.println(isAnagram2(s, t));
         long end = System.currentTimeMillis();
         System.out.println("运行时间：" + (end - start) + "ms");
     }

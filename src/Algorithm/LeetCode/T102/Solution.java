@@ -1,6 +1,7 @@
 package Algorithm.LeetCode.T102;
 
 import Algorithm.common.TreeNode;
+import javafx.util.Pair;
 
 import java.util.*;
 
@@ -10,17 +11,24 @@ import java.util.*;
  * @author wangfei
  */
 public class Solution {
+
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
-        Deque<TreeNode> que = new LinkedList<TreeNode>();
-        helper(result, 0, que, root);
+        helper(result, 0, root);
         return result;
     }
 
-    private void helper(List<List<Integer>> result, int index, Deque<TreeNode> que, TreeNode root) {
+    /**
+     * 广度优先搜索
+     *
+     * @param result
+     * @param index
+     * @param root
+     */
+    private void helper(List<List<Integer>> result, int index, TreeNode root) {
         if (root == null) {
             return;
         }
@@ -32,9 +40,10 @@ public class Solution {
             level = result.get(index);
         }
         level.add(root.val);
-        helper(result, index + 1, que, root.left);
-        helper(result, index + 1, que, root.right);
+        helper(result, index + 1, root.left);
+        helper(result, index + 1, root.right);
     }
+
 
     //TODO
     public static void main(String[] args) {

@@ -42,12 +42,15 @@ public class Solution {
 
     private static boolean isValid(char[][] board, int row, int col, char c) {
         for (int i = 0; i < 9; i++) {
-            if (board[i][col] != '.' && board[i][col] == c)    //check row
+            //check row
+            if (board[i][col] != '.' && board[i][col] == c)
                 return false;
-            if (board[row][i] != '.' && board[row][i] == c)    // check column
+            // check column
+            if (board[row][i] != '.' && board[row][i] == c)
                 return false;
+            //check 3*3 block
             if (board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] != '.'
-                    && board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c)   //check 3*3 block
+                    && board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c)
                 return false;
         }
         return true;

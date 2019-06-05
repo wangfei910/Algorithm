@@ -21,15 +21,15 @@ public class Solution {
      * @return
      */
     public static ListNode reverseList(ListNode head) {
+        ListNode pre = null;
         ListNode cur = head;
-        ListNode reverseHead = null;
         while (cur != null) {
-            ListNode Next = cur.next;
-            cur.next = reverseHead;
-            reverseHead = cur;
-            cur = Next;
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
-        return reverseHead;
+        return pre;
     }
 
     /**
@@ -48,13 +48,18 @@ public class Solution {
         return reverseHead;
     }
 
+    /**
+     * 主程序
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         long start = System.nanoTime();
         ListNodeUtil listNodeUtil = new ListNodeUtil();
         int[] arr = {1, 2, 3, 4, 5};
         listNodeUtil.showListNode(listNodeUtil.buildListNode(arr));
-        listNodeUtil.showListNode(reverseList2(listNodeUtil.buildListNode(arr)));
+        listNodeUtil.showListNode(reverseList(listNodeUtil.buildListNode(arr)));
         long end = System.nanoTime();
-        System.out.println("运行时间：" + (end - start) +"ns");
+        System.out.println("运行时间：" + (end - start) + "ns");
     }
 }

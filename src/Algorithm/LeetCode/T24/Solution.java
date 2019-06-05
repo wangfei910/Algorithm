@@ -9,6 +9,7 @@ import Algorithm.common.ListNodeUtil;
  * @author wangfei
  */
 public class Solution {
+
     /**
      * 递归
      *
@@ -24,25 +25,28 @@ public class Solution {
         return Next;
     }
 
+    /**
+     * 双指针
+     *
+     * @param head
+     * @return
+     */
     public static ListNode swapPairs2(ListNode head) {
-        if (head == null)
-            return null;
-        ListNode helper = new ListNode(0);
-        helper.next = head;
-        ListNode pre = helper;
-        ListNode cur = head;
-        while (cur != null && cur.next != null) {
-            ListNode next = cur.next.next;
-            cur.next.next = cur;
-            pre.next = cur.next;
-            if (next != null && next.next != null)
-                cur.next = next.next;
-            else
-                cur.next = next;
-            pre = cur;
-            cur = next;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode p = dummy;
+        while (p.next != null && p.next.next != null) {
+            ListNode node1 = p.next;
+            ListNode node2 = node1.next;
+            ListNode next = node2.next;
+
+            node2.next = node1;
+            node1.next = next;
+            p.next = node2;
+
+            p = node1;
         }
-        return helper.next;
+        return dummy.next;
     }
 
     public static void main(String[] args) {
@@ -50,6 +54,6 @@ public class Solution {
         int[] arr = {1, 2, 3, 4, 5};
         listNodeUtil.showListNode(listNodeUtil.buildListNode(arr));
         System.out.println();
-        listNodeUtil.showListNode(swapPairs(listNodeUtil.buildListNode(arr)));
+        listNodeUtil.showListNode(swapPairs2(listNodeUtil.buildListNode(arr)));
     }
 }
