@@ -1,0 +1,18 @@
+package Algorithm.Test.ThreadTest;
+
+/**
+ * @author: wangfei
+ * @date: 2019/5/17 15:48
+ */
+public class ThreadTest extends Thread {
+
+    @Override
+    public void run() {
+
+    }
+
+    public static void main(String[] args) {
+        new ThreadTest().start();
+    }
+
+}
