@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class Shell_Sort {
 
-    public static void shellSort(int[] arr) {
+    public static int[] shellSort(int[] arr) {
         int k = 1;
         // 遍历所有的步长
         for (int d = arr.length / 2; d > 0; d /= 2) {
@@ -30,6 +30,16 @@ public class Shell_Sort {
             System.out.println("第" + k + "次排序结果：" + Arrays.toString(arr));
             k++;
         }
+        return arr;
     }
 
+    public static void main(String[] args) {
+        int length = 10;
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = (int) (Math.random() * 100);
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(shellSort(arr)));
+    }
 }

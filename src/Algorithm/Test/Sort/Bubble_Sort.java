@@ -1,5 +1,7 @@
 package Algorithm.Test.Sort;
 
+import java.util.Arrays;
+
 /**
  * 冒泡排序
  * 时间复杂度：O(n^2)
@@ -16,7 +18,7 @@ public class Bubble_Sort {
      * 5,2,7,4,1,0,5,7,9
      * 2,5
      */
-    public static void bubbleSort(int[] arr) {
+    public static int[] bubbleSort(int[] arr) {
         //控制共比较多少轮
         for (int i = 0; i < arr.length - 1; i++) {
             //控制比较的次数
@@ -28,6 +30,17 @@ public class Bubble_Sort {
                 }
             }
         }
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int length = 10;
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = (int) (Math.random() * 100);
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(bubbleSort(arr)));
     }
 
 }

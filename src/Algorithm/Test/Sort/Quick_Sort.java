@@ -108,10 +108,15 @@ public class Quick_Sort {
      */
     public static void main(String[] args) {
         long start = System.nanoTime();
-        int[] arr = {10, 9, 2, 5, 3, 7, 101, 18};
+        int length = 10;
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = (int) (Math.random() * 100);
+        }
+        System.out.println(Arrays.toString(arr));
         int Start = 0;
         int End = arr.length - 1;
-        System.out.println(Arrays.toString(quickSort3Ways(arr, Start, End)));
+        System.out.println(Arrays.toString(quickSort(arr, Start, End)));
         long end = System.nanoTime();
         System.out.println("运行时间：" + (end - start) + "ns");
     }

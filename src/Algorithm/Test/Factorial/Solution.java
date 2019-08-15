@@ -43,8 +43,8 @@ public class Solution {
      */
     public static void main(String[] args) {
         long start = System.nanoTime();
-        int n = 5;
-        System.out.println(Factorial2(n));
+        int n = 11;
+        System.out.println(Factorial(n));
         long end = System.nanoTime();
         System.out.println("运行时间：" + (end - start) + "ns");
     }

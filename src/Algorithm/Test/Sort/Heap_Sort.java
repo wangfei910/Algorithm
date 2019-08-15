@@ -1,5 +1,7 @@
 package Algorithm.Test.Sort;
 
+import java.util.Arrays;
+
 /**
  * 堆排序
  * 时间复杂度：O(nlogn)
@@ -10,7 +12,7 @@ package Algorithm.Test.Sort;
  */
 public class Heap_Sort {
 
-    public static void heapSort(int[] arr) {
+    public static int[] heapSort(int[] arr) {
         //开始位置是最后一个非叶子节点，即最后一个节点的父节点
         int start = (arr.length - 1) / 2;
         //调整为大顶堆
@@ -24,6 +26,7 @@ public class Heap_Sort {
             arr[i] = temp;
             maxHeap(arr, i, 0);
         }
+        return arr;
     }
 
     public static void maxHeap(int[] arr, int size, int index) {
@@ -47,6 +50,16 @@ public class Heap_Sort {
             //交换位置以后，可能会破坏之前排好的堆，所以，之前的排好的堆需要重新调整
             maxHeap(arr, size, max);
         }
+    }
+
+    public static void main(String[] args) {
+        int length = 10;
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = (int) (Math.random() * 100);
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(heapSort(arr)));
     }
 
 }

@@ -1,5 +1,7 @@
 package Algorithm.Test.Sort;
 
+import java.util.Arrays;
+
 /**
  * 基数排序
  * 时间复杂度：O(d(r+n))
@@ -11,7 +13,7 @@ package Algorithm.Test.Sort;
 public class Radix_Sort {
 
     //基数排序（普通方法实现）
-    public static void radixSort(int[] arr) {
+    public static int[] radixSort(int[] arr) {
         //存最数组中最大的数字
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
@@ -54,5 +56,16 @@ public class Radix_Sort {
                 }
             }
         }
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int length = 10;
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = (int) (Math.random() * 100);
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(radixSort(arr)));
     }
 }
